@@ -3,13 +3,13 @@
 
 def frequencies(items):
     frequencies = {}
-    j = 0;
-    currItem = items[0]
-    for i in range(len(items)):
-        while(currItem == items[i]):
-            j = j + 1
-            frequencies.update({currItem : j})
-        else:
-            currItem = items[i]
-            j = 0
+    if(len(items) != 0):
+        for i in items:
+            i = str(i)
+            if i in frequencies.keys():
+                frequencies[i] += 1
+            else:
+                frequencies[i] = 1
     return frequencies
+print(frequencies(['0', 4, 4,'4','d','d','e',0,'a','d','4']))
+print(frequencies(['a', 'a', 'b', 'b', 'b', 'c']))
